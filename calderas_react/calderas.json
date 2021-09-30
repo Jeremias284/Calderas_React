@@ -1,0 +1,16 @@
+{
+  "calderas": [
+    {
+      "id": 3,
+      "nombre": "juan kopech",
+      "caldera": "tipo B",
+      "activo": true
+    },
+    {
+      "id": 4,
+      "nombre": "lucila kopech",
+      "caldera": "tipo C",
+      "activo": false
+    }
+  ]
+}
