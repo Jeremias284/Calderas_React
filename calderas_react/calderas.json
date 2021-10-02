@@ -1,6 +1,18 @@
 {
   "calderas": [
     {
+      "id": 1,
+      "nombre": "ivan kopech",
+      "caldera": "tipo A",
+      "activo": true
+    },
+    {
+      "id": 2,
+      "nombre": "jeremias calzada",
+      "caldera": "tipo B",
+      "activo": true
+    },
+    {
       "id": 3,
       "nombre": "juan kopech",
       "caldera": "tipo B",

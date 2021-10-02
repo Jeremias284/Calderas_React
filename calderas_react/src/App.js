@@ -21,7 +21,7 @@ function App() {
   }, [])
 
   //FETCH CALDERAS
-  const fetchCaldera= async () => {
+  const fetchCalderas= async () => {
     const res = await fetch('http://localhost:5000/calderas');
     const data = await res.json();
 
@@ -36,7 +36,7 @@ function App() {
     return data;
   }
 
-  //AGREGAR CALDERA
+  //AGREGAR TECNICO
   const agregarCaldera = async (caldera) => {
     const res = await fetch('http://localhost:5000/calderas', {
       method: 'POST',
@@ -51,7 +51,7 @@ function App() {
 
   }
 
-  //ELIMINAR CALDERA
+  //ELIMINAR TECNICO
   const eliminarCaldera = async (id) => {
     await fetch(`http://localhost:5000/calderas/${id}`, {
       method: 'DELETE',
@@ -83,13 +83,13 @@ function App() {
 
   return (
      <div className="container">
-        <Header onAdd={() => setShowAddCaldera(!setShowAddCaldera)} showAdd= {showAddCaldera} />
+        <Header onAdd={() => setShowAddCaldera(!showAddCaldera)} showAdd= {showAddCaldera} />
           {showAddCaldera && <AgregarCaldera onAdd={agregarCaldera} />}
-        {calderas.length > 0 ? <Calderas calderas={calderas} onDelete =  {eliminarCaldera} onToggle={toggleRecordatorio} /> : 'No Calderas to show'}
+        {calderas.length > 0 ? <Calderas calderas={calderas} onDelete =  {eliminarCaldera} onToggle={toggleRecordatorio} /> : 'No Tecnicos to show'}
 
         <footer />
      </div>
-     //si hay calderas > 0, las muestra, sino muestra cartel
+     //si hay tecnicos > 0, las muestra, sino muestra cartel
   );
 }
 

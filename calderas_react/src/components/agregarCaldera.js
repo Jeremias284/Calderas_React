@@ -1,43 +1,30 @@
-import React from 'react'
-import {useState} from 'react';
+import React from "react";
+import PropTypes from 'prop-types'
 
- const AgregarCaldera = ({onAdd}) => {
-    const [nombre, setNombre] = useState('')
-    const [caldera, setCaldera] = useState('')
-    const [activo, setActivo] = useState(false)
-
-    const onSubmit = (e) => {
-        e.preventDefault();
-
-        if(!nombre){
-            alert('introduzca datos');
-            return;
-        }
-        onAdd({nombre, caldera, activo});
-        setNombre('');
-        setCaldera('');
-        setActivo(false);
-    }
-
-    return (
-        <form className= 'add-form' onSubmit = { onSubmit}>
-            <div className= 'form-control'>
-                <label>Calderas</label>
-                <input type= 'text' placeholder='ingrese el nombre del tecnico' value={nombre} onChange= {(e) => setNombre(e.target.value)} />
-            </div>
-            <div className= 'form-control '>
-                <label>Caldera</label>
-                <input type= 'text' placeholder='ingrese el tipo de caldera' value={caldera} onChange= {(e) => setCaldera(e.target.value)} />
-            </div>
-            <div className= 'form-control form-control-check'>
-                <label>Activo</label>
-                <input type= 'checkbox' checked={activo} value={activo} onChange= {(e) => setActivo(e.currentTarget.checked)} />
-            </div>
-
-            <input type= 'submit' value= 'Guardar Tecnico' className= 'btn btn-block' />
-        </form>
-    )
+const Boton = ({color1, color2, text1, text2, onClick}) => {
+    return(
+    <div>
+        <button onClick={onClick} 
+            style= {{backgroundColor: color1}} 
+            className='btn'>{text1} 
+        </button>
+        <button onClick={onClick} 
+            style= {{backgroundColor: color2}} 
+            className='btn'>{text2} 
+        </button>
+    </div>
+    
+    ) 
+    
 }
 
+Boton.defaultProps = {
+    color: 'steelblue',
+}
 
-export default AgregarCaldera;
+Boton.propTypes = {
+    text: PropTypes.string,
+    color: PropTypes.string, 
+}
+
+export default Boton

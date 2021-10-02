@@ -18,7 +18,7 @@ const Header = ({title, onAdd, showAdd, showEditar}) => {
 }
 
 Header.defaultProps = {
-    title: 'Tecnicos',
+    title: 'Calderas',
 }
 
 export default Header;
